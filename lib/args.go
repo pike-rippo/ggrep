@@ -47,16 +47,16 @@ func GetArgs() Args {
 	case 1:
 		Target = flag.Args()[0]
 	case 2:
-		FilePath = flag.Args()[0]
-		Target = flag.Args()[1]
+		Target = flag.Args()[0]
+		FilePath = flag.Args()[1]
 	default:
-		FilePath = flag.Args()[0]
-		Target = flag.Args()[1]
+		Target = flag.Args()[0]
+		FilePath = flag.Args()[1]
 	}
 
 	if *help {
 		filepath, _ := os.Executable()
-		fmt.Printf("%s [OPTIONS] [FilePath] <Target>\n", filepath)
+		fmt.Printf("%s [OPTIONS] <Target> [FilePath]\n", filepath)
 		flag.Usage()
 		os.Exit(0)
 	}
